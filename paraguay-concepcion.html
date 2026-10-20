@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubre Concepción | Turismo Paraguay</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'river-blue': '#0ea5e9', // Crystalline waters
+                        'river-blue-dark': '#0284c7',
+                        'jungle-green': '#15803d', // Lush green
+                        'jungle-green-dark': '#166534',
+                        'earth-tone': '#b45309', // Warm earth/caves
+                        'earth-light': '#fef3c7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for subtle animations */
+        .zoom-hover {
+            transition: transform 0.5s ease;
+        }
+        .group:hover .zoom-hover {
+            transform: scale(1.05);
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-leaf text-jungle-green text-2xl"></i>
+                    <span class="font-serif font-bold text-2xl text-jungle-green-dark">Visit<span class="text-river-blue">Concepción</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-jungle-green font-medium transition">Inicio</a>
+                    <a href="#historia" class="text-gray-700 hover:text-jungle-green font-medium transition">Historia</a>
+                    <a href="#atractivos" class="text-gray-700 hover:text-jungle-green font-medium transition">Atractivos</a>
+                    <a href="#galeria" class="text-gray-700 hover:text-jungle-green font-medium transition">Galería</a>
+                </div>
+                <div class="hidden md:flex">
+                    <a href="#reserva" class="bg-river-blue hover:bg-river-blue-dark text-white px-6 py-2 rounded-full font-medium transition shadow-lg shadow-river-blue/30">
+                        Planear Viaje
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-700 hover:text-jungle-green">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image (Nature/River placeholder) -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80" alt="Naturaleza de Concepción" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <span class="block text-river-blue font-semibold tracking-widest uppercase mb-4 text-sm md:text-base">El tesoro del norte paraguayo</span>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+                Aventura y Naturaleza en <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-river-blue">Concepción</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 font-light">
+                Descubre aguas cristalinas, cavernas milenarias y una rica historia colonial en la "Perla del Norte".
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#atractivos" class="bg-jungle-green hover:bg-jungle-green-dark text-white px-8 py-3 rounded-full font-medium transition flex items-center justify-center gap-2">
+                    Explorar Destinos <i class="fa-solid fa-arrow-down"></i>
+                </a>
+                <a href="#reserva" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/50 px-8 py-3 rounded-full font-medium transition">
+                    Contactar Guías
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Historia / About -->
+    <section id="historia" class="py-20 bg-earth-light/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f0a?auto=format&fit=crop&q=80" alt="Arquitectura Histórica" class="rounded-2xl shadow-2xl z-10 relative">
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-earth-tone/30 rounded-2xl z-0 hidden md:block"></div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="h-px w-12 bg-earth-tone"></div>
+                        <span class="text-earth-tone font-semibold uppercase tracking-wider text-sm">Nuestra Historia</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">La Villa Real de la Concepción</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Fundada en 1773, Concepción ha sido históricamente un punto estratégico y comercial del Paraguay. Conocida cariñosamente como la <strong>"Perla del Norte"</strong>, sus calles aún conservan el eco de un pasado próspero, reflejado en sus imponentes casonas de estilo italo-francés y sus monumentos.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Hoy en día, Concepción no solo es historia; es la puerta de entrada a maravillas naturales inexploradas. Desde el majestuoso Río Paraguay hasta reservas ecológicas únicas en el mundo.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 border-t border-gray-200 pt-6">
+                        <div>
+                            <span class="block text-3xl font-serif font-bold text-jungle-green mb-1">1773</span>
+                            <span class="text-sm text-gray-500 uppercase tracking-wide">Año de Fundación</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-serif font-bold text-river-blue mb-1">+10</span>
+                            <span class="text-sm text-gray-500 uppercase tracking-wide">Destinos Ecoturísticos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Atractivos Principales -->
+    <section id="atractivos" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-jungle-green font-semibold uppercase tracking-wider text-sm">Maravillas Locales</span>
+                <h2 class="text-4xl font-serif font-bold text-gray-900 mt-2 mb-4">Destinos Imperdibles</h2>
+                <p class="text-gray-600">Prepara tu cámara y tu espíritu aventurero. Estos son los lugares que hacen de Concepción un destino único.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Arroyo Tagatiyá -->
+                <div class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white border border-gray-100 flex flex-col h-full hover:-translate-y-2">
+                    <div class="relative h-64 overflow-hidden">
+                        <!-- Placeholder river image -->
+                        <img src="https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?auto=format&fit=crop&q=80" alt="Arroyo Tagatiyá" class="w-full h-full object-cover zoom-hover">
+                        <div class="absolute top-4 right-4 bg-river-blue text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md bg-opacity-90">
+                            Naturaleza
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-3">Arroyo Tagatiyá</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">
+                            Un verdadero paraíso escondido. Sus aguas son tan transparentes que puedes ver los peces nadando sobre un lecho calcáreo. Ideal para el ecoturismo, snorkel y flotación.
+                        </p>
+                        <a href="#reserva" class="text-river-blue font-semibold hover:text-river-blue-dark flex items-center transition mt-auto">
+                            Ver actividades <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Cavernas de Vallemí -->
+                <div class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white border border-gray-100 flex flex-col h-full hover:-translate-y-2">
+                    <div class="relative h-64 overflow-hidden">
+                        <!-- Placeholder cave image -->
+                        <img src="https://images.unsplash.com/photo-1518557343467-336e3c0c0800?auto=format&fit=crop&q=80" alt="Cavernas de Vallemí" class="w-full h-full object-cover zoom-hover">
+                        <div class="absolute top-4 right-4 bg-earth-tone text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md bg-opacity-90">
+                            Aventura Extrema
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-3">Cavernas de Vallemí</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">
+                            Explora el fascinante mundo subterráneo en el distrito de San Lázaro. Formaciones de estalactitas y estalagmitas milenarias te esperan en cavernas como la "Santa Caverna" o "Cambá Hopo".
+                        </p>
+                        <a href="#reserva" class="text-earth-tone font-semibold hover:text-amber-800 flex items-center transition mt-auto">
+                            Ver actividades <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Monumentos Históricos -->
+                <div class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white border border-gray-100 flex flex-col h-full hover:-translate-y-2">
+                    <div class="relative h-64 overflow-hidden">
+                        <!-- Placeholder monument/architecture image -->
+                        <img src="https://images.unsplash.com/photo-1565026045864-4bf8106208ce?auto=format&fit=crop&q=80" alt="Monumentos Históricos" class="w-full h-full object-cover zoom-hover">
+                        <div class="absolute top-4 right-4 bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md bg-opacity-90">
+                            Cultura
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-3">Monumentos Históricos</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">
+                            Recorre el microcentro y admira el Obelisco a los héroes, la antigua Mansión Villa de la Concepción, la Catedral, y los vestigios de un vibrante puerto comercial de antaño.
+                        </p>
+                        <a href="#reserva" class="text-gray-800 font-semibold hover:text-black flex items-center transition mt-auto">
+                            Ver rutas guiadas <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Galería -->
+    <section id="galeria" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Postales del Norte</h2>
+                <p class="text-gray-400">Momentos inolvidables capturados por nuestros visitantes.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-lg aspect-square">
+                    <img src="https://images.unsplash.com/photo-1542314831-c6a4d27ce66f?auto=format&fit=crop&q=80" alt="Naturaleza" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg aspect-square md:col-span-2">
+                    <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&q=80" alt="Paisaje" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg aspect-square">
+                    <img src="https://images.unsplash.com/photo-1582450871972-ab5ca641643d?auto=format&fit=crop&q=80" alt="Río" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg aspect-square">
+                    <img src="https://images.unsplash.com/photo-1504700610630-ac6aba3536d3?auto=format&fit=crop&q=80" alt="Arquitectura" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg aspect-square">
+                    <img src="https://images.unsplash.com/photo-1616422285623-14dbf55cb3bc?auto=format&fit=crop&q=80" alt="Caverna" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg aspect-square md:col-span-2">
+                    <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80" alt="Bosque" class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto / Reserva -->
+    <section id="reserva" class="py-24 bg-earth-light/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                <!-- Info Section -->
+                <div class="bg-jungle-green text-white p-10 md:w-2/5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-3xl font-serif font-bold mb-4">Empieza tu Aventura</h3>
+                        <p class="text-emerald-100 mb-8">Contáctanos para organizar tu itinerario, reservar guías locales certificados o consultar por alojamientos.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <i class="fa-solid fa-location-dot text-xl text-emerald-300"></i>
+                                <span>Centro de Información, Concepción, PY</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <i class="fa-solid fa-phone text-xl text-emerald-300"></i>
+                                <span>+595 981 123 456</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <i class="fa-solid fa-envelope text-xl text-emerald-300"></i>
+                                <span>turismo@visitconcepcion.py</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-jungle-green transition">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-jungle-green transition">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form Section -->
+                <div class="p-10 md:w-3/5">
+                    <form action="#" method="POST">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Nombre completo</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-jungle-green focus:border-transparent outline-none transition bg-gray-50" placeholder="Ej. Juan Pérez">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-jungle-green focus:border-transparent outline-none transition bg-gray-50" placeholder="juan@correo.com">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Fecha estimada</label>
+                                <input type="date" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-jungle-green focus:border-transparent outline-none transition bg-gray-50 text-gray-600">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Destino de interés</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-jungle-green focus:border-transparent outline-none transition bg-gray-50 text-gray-600">
+                                    <option>Selecciona un destino</option>
+                                    <option>Arroyo Tagatiyá (Snorkel)</option>
+                                    <option>Cavernas de Vallemí (Aventura)</option>
+                                    <option>City Tour Histórico</option>
+                                    <option>Paquete Completo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Mensaje / Dudas</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-jungle-green focus:border-transparent outline-none transition bg-gray-50" placeholder="¿Cuántas personas viajan? ¿Requieres alojamiento?"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-river-blue hover:bg-river-blue-dark text-white font-bold py-4 rounded-xl transition shadow-lg shadow-river-blue/30">
+                            Solicitar Información
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-leaf text-jungle-green text-2xl"></i>
+                        <span class="font-serif font-bold text-2xl text-white">Visit<span class="text-river-blue">Concepción</span></span>
+                    </div>
+                    <p class="text-gray-400 max-w-sm">
+                        Promoviendo el turismo sostenible y el desarrollo local en el departamento de Concepción, Paraguay.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
+                        <li><a href="#historia" class="hover:text-white transition">Nuestra Historia</a></li>
+                        <li><a href="#atractivos" class="hover:text-white transition">Atractivos</a></li>
+                        <li><a href="#reserva" class="hover:text-white transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Términos y Condiciones</a></li>
+                        <li><a href="#" class="hover:text-white transition">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2026 Turismo Concepción. Todos los derechos reservados.</p>
+                <p class="mt-2 md:mt-0">Diseñado con <i class="fa-solid fa-heart text-red-500 mx-1"></i> en Paraguay</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
